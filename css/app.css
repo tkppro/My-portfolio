@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    -webkit-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
+.logo {
+    color: rgb(236, 231, 231);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin: 35px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
+    background: url("../background.jpg");
+    background-size: cover;
+}
+
+
+.landing h1 {
+    margin: 100px;
+    font-size: 25px;
+    color: white;
+}
+
+.typing {
+    position: relative;
+}
+
+.typing::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    right: -5px;
+    height: 80%;
+    border-right: 2px solid white;
+    animation: blink 0.5s infinite ease;
+}
+
+.scroll-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scroll a {
+    color: rgba(187, 194, 235, 0.733);
+    text-decoration: none;
+}
+
+.scroll-block .fa-arrow-down {
+    width: 10px;
+    font-size: 20px;
+    color: white;
+    animation: fadeUp 1.5s infinite ease-out;
+}
+
+.nav-transparent {
+    position: fixed;
+    background-color: #fff;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 300px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width: 768px) {
+    .line {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+    }
+
+    nav {
+        display: block;
+        z-index: 9999;
+        width: 100%;
+    }
+
+    .hamburger {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+    }
+
+    .nav-links {
+        background: rgb(5, 160, 126);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(40px at 90% -10%);
+        -webkit-clip-path: circle(40px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .landing {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+        z-index: 9999;
+    }
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+
+        transition: all 0.5s ease 0.6s;
+    }
+    li.fade {
+        opacity: 1;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        padding-top: 15px;
+        margin: auto;
+    }
+    .avatar-container, .skill-container {
+        width: 100% !important;
+    }
+    #about-me {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    
+}
+
+/* #site-header nav li.menu-item-active a::after, #site-header nav li.menu-item-active a::before {
+	width: 100% ;
+    left: 0;
+	transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+    background: #00EFD2;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    height: 4px;
+} */
+
+/* #site-header nav ul li:hover .nav-text::after, #site-header nav ul li:hover .nav-text::before {
+    width: 100%;
+    left: 0;    
+}
+
+#site-header nav ul li .nav-text::after, #site-header nav ul li .nav-text::before {
+    transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+    background: #00EFD2;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    width: 0;
+    right: 0;
+    height: 4px;
+} */
+
+.skill-bar {
+    width: 100%;
+    height: 24px;
+    border: 2px solid black;
+}
+
+#about-title, #service-title {
+    margin-top: 50px;
+    text-align: center;
+}
+#about-me {
+    display: flex;
+}
+
+#about-description {
+    color: rgb(138, 135, 135);
+}
+
+.skill-container {
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill {
+    margin: 20px;
+}
+.avatar-container {
+    width: 50%;
+    float: right;
+}
+
+#avatar-figure {
+    padding: 5px;
+    border: 1px solid black;
+}
+#skill-html, #skill-css, #skill-js {
+    display: block;
+}
+#skill-html {
+    background: red;
+    width: 70%;
+    height: 20px;
+}
+#skill-css {
+    background: rgb(8, 236, 8);
+    width: 60%;
+    height: 20px;
+}
+#skill-js {
+    background: rgb(15, 219, 192);
+    width: 50%;
+    height: 20px;
+}
+
+.avatar-me {
+    width: 60%;
+    height: auto;
+}
+
+.m-5 {
+    margin: 50px;
+}
+/* 
+.col-4 {
+    width: 33.333%;
+} */
+
+.services-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.service-col, .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-row {
+    
+}
+
+.service-card {
+    width: 300px;
+    height: 300px;
+    background: #fff;
+    padding: 20px;
+}
+#service-section {
+    background-color:#f1f1f1;
+}
